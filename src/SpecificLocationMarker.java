@@ -19,7 +19,13 @@ public class SpecificLocationMarker extends PApplet {
 		map = new UnfoldingMap(this, new Microsoft.RoadProvider());
 		map.zoomAndPanTo(new Location(43.6425662, -79.3870568), 14); // CN Tower
 
-		MapUtils.createDefaultEventDispatcher(this, map);		
+		MapUtils.createDefaultEventDispatcher(this, map);	
+		
+		// Adding a marker to a specified location (CN Tower) on the map
+		Location loc = new Location(43.6425662, -79.3870568);
+		SimplePointMarker marker = new SimplePointMarker(loc);
+		marker.setColor(color(255,0,0));
+		map.addMarker(marker);
 
 	}
 
